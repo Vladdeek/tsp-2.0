@@ -1,0 +1,110 @@
+:root {
+	--text-color: black;
+	--color1: white;
+}
+
+.link-in-haeder {
+	font-size: 12px;
+	text-decoration: none;
+	user-select: none;
+	cursor: pointer;
+	margin-top: 10px;
+	color: var(--text-color);
+}
+.main {
+	height: 100vh; /* Высота равна высоте экрана */
+}
+/* Стили для кнопки */
+.next-btn {
+	position: relative; /* Устанавливаем контекст для позиционирования SVG */
+	color: var(--color1);
+	background-color: var(--text-color);
+	font-size: 18px;
+	border-radius: 10px;
+	padding: 10px 20px;
+	text-decoration: none;
+	user-select: none;
+	cursor: pointer;
+	transition: 0.25s ease;
+}
+.next-btn:hover {
+	transform: scale(1.0125);
+	color: var(--text-color);
+	background-color: var(--color1);
+	border: 2px solid var(--text-color);
+	transition: 0.25s ease;
+}
+.next-btn:active {
+	border: none;
+	filter: brightness(0.9);
+	transition: 0.1s ease;
+}
+
+/* Стили для SVG */
+svg.star {
+	position: absolute;
+	z-index: -1;
+	pointer-events: none;
+	left: 0px;
+	bottom: -30px;
+	transform: scale(0.5); /* Подстройка размера через трансформацию */
+	transition: 0.3s ease;
+	opacity: 0;
+}
+.next-btn:hover #star1 {
+	z-index: 11;
+	left: 45px;
+	bottom: -7px;
+	opacity: 1;
+	transition: 0.3s ease;
+	animation: float1 3s ease-in-out infinite;
+}
+.next-btn:hover #star2 {
+	z-index: 11;
+	left: 70px;
+	bottom: -25px;
+	opacity: 1;
+	transition: 0.3s ease;
+	animation: float2 2s ease-in-out infinite;
+}
+.next-btn:hover #star3 {
+	z-index: 11;
+	left: -70px;
+	bottom: -53px;
+	opacity: 1;
+	transition: 0.3s ease;
+	animation: float3 4s ease-in-out infinite;
+}
+@keyframes float1 {
+	0% {
+		transform: translateY(0) scale(0.75) scaleX(0.75); /* Исходное положение, уменьшенный масштаб и вытягивание */
+	}
+	50% {
+		transform: translateY(-2px) scale(0.75) scaleX(0.75); /* Смещение вверх и те же трансформации */
+	}
+	100% {
+		transform: translateY(0) scale(0.75) scaleX(0.75); /* Возврат в исходное положение */
+	}
+}
+@keyframes float2 {
+	0% {
+		transform: translateY(0) scale(0.5) scaleX(0.75); /* Исходное положение, уменьшенный масштаб и вытягивание */
+	}
+	50% {
+		transform: translateY(-3px) scale(0.5) scaleX(0.75); /* Смещение вверх и те же трансформации */
+	}
+	100% {
+		transform: translateY(0) scale(0.5) scaleX(0.75); /* Возврат в исходное положение */
+	}
+}
+@keyframes float3 {
+	0% {
+		transform: translateY(0) scale(0.66) scaleX(0.75); /* Исходное положение, уменьшенный масштаб и вытягивание */
+	}
+	50% {
+		transform: translateY(-5px) scale(0.66) scaleX(0.75); /* Смещение вверх и те же трансформации */
+	}
+	100% {
+		transform: translateY(0) scale(0.66) scaleX(0.75); /* Возврат в исходное положение */
+	}
+}
